@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_2450342_gv1716euz4m.eot?t=1616935198412'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_2450342_gv1716euz4m.eot?t=1616935198412#iefix')
+            format('embedded-opentype'),
+        /* IE6-IE8 */
+            url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMAAAsAAAAAB2AAAAKzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqCaII2ATYCJAMICwYABCAFhG0HMxtfBhEVjGuyj4TclOajro8mVI2ZeKCfi3w/yWaXD5hBkasEtgfCdOqAXd2B//+ndliEHkgm5njjXZ5xX8Z+/3Ydr3GJCljA/s/h0sYUmx8okKU456JeYMVbA90Do8gKJJEDoRvGbqI8iMcEFDTWURg5euJMOQmwKiBsXLdmmVxKI6nJD3KCtORgIlyVkYvORW9whX8//K17yBHJxEDR1NWjVhr6WwkmxUc/H7WQInDHM0E7RoyOSAgzSy2TxWGko1jBiSSas678wG+lz58pZ7X/eARCCuSWQEORc05czDvVqggkzn36AI73cpJpBv5EpdKCF183LD6pM+D1T00e//ju22Pfvf+uSeFhzb4vvm/46Ie33xz9elYl+2UMLbdtrHbhzrHbharnbx69ta/qTSop5u75tfbx26Um0YcrJ+5WynezpbHFVCNfPnm3XHGPKf2Xq9WEjxLxTq43vVVuPWOcP36rUdP+jlA+LBZ9+SlI95b3prRkbXltj6EzO0/lkjS/3FDw+U38PB70I35j5xcrty2pMvD/XDEBP5++31hyfX6TaGcjd7rWwGvntuxIXD7QRonNLU1EDsjcTl1BAZ/Jjup+6auodY+mIJfiahDJagSxnJbIBNsRMop6QioHOQQKOsiOF9Vg9kKSR3tvAYKqPhCp+A5iVX2RCfYHGbX9IVU17KFgdqhxYVHr0HojDDlRSfGStpwnRXp6Qf4R9W3ILcnnpCvMtX6JgygbzzDBxtji7nVCqqjNoxyE5zAMsyw2dygZNOSShqGWvSko53HjGcFAjqAiCi+iVZpNlPYnL/f5I6jdDHJW09ahvwLjtLOLWCBqgcwkU6u2a3nFuasliJRQZjYSB8EEA4zMxFI+rwMlCjQ9QotUKHXTtpJgftn4dAegACijAM2x/Jmn+4TjZgMA')
+            format('woff2'),
+        url('//at.alicdn.com/t/font_2450342_gv1716euz4m.woff?t=1616935198412')
+            format('woff'),
+        url('//at.alicdn.com/t/font_2450342_gv1716euz4m.ttf?t=1616935198412')
+            format('truetype'),
+        /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+            url('//at.alicdn.com/t/font_2450342_gv1716euz4m.svg?t=1616935198412#iconfont')
+            format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: 'iconfont' !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-test:before {
+    content: '\e60c';
+}

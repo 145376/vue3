@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import * as echarts from 'echarts'
+import { provide } from 'vue'
+import {
+    BarChart
+} from 'echarts/charts';
+import {
+    TitleComponent,
+    TooltipComponent,
+    GridComponent
+} from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+echarts.use(
+  [TitleComponent, TooltipComponent, GridComponent, BarChart, CanvasRenderer]
+)
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  setup(){
+    provide('echarts', echarts)
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
