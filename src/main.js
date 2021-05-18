@@ -10,6 +10,8 @@ import {Button, Form, Input, DatePicker, Radio, Checkbox} from 'ant-design-vue'
 
 const app = createApp(App);
 
+console.log( '重新提交' )
+
 app.use(Button);
 app.use(Form);
 app.use(Input);
