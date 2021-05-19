@@ -14,6 +14,8 @@ import {
     GridComponent
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
+import * as THREE from 'three'
+import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 echarts.use(
   [TitleComponent, TooltipComponent, GridComponent, BarChart, CanvasRenderer]
 )
@@ -21,6 +23,8 @@ echarts.use(
 export default {
   setup(){
     provide('echarts', echarts)
+    provide('THREE', THREE)
+    provide('OrbitControls', OrbitControls)
   }
 }
 </script>

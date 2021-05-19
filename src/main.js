@@ -6,11 +6,9 @@ import 'lib-flexible/flexible.js'
 import './assets/css/common.css'
 import './assets/css/iconfont.css'
 
-import {Button, Form, Input, DatePicker, Radio, Checkbox} from 'ant-design-vue'
+import {Row, Col, Button, Form, Input, DatePicker, Radio, Checkbox} from 'ant-design-vue'
 
 const app = createApp(App);
-
-console.log( '重新提交' )
 
 app.use(Button);
 app.use(Form);
@@ -18,5 +16,7 @@ app.use(Input);
 app.use(DatePicker);
 app.use(Radio);
 app.use(Checkbox);
+app.use(Row);
+app.use(Col);
 app.use(router);
 app.mount('#app');
