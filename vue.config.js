@@ -1,21 +1,24 @@
 module.exports = {
-    devServer:{
+    devServer: {
         open: true,
-        hot: true
+        hot: true,
     },
-    css:{
-        loaderOptions:{
-            less:{
-                javascriptEnabled: true
+    css: {
+        loaderOptions: {
+            less: {
+                javascriptEnabled: true,
             },
-            css:{},
-            postcss:{
+            css: {},
+            postcss: {
                 plugins: [
                     require('postcss-px2rem')({
-                        remUnit: 37.5
-                    })
-                ]
-            }
+                        remUnit: 37.5,
+                    }),
+                ],
+            },
         },
-    }
-}
+    },
+    // configureWebpack: config => {
+    //     config.devtool = 'source-map'
+    // }
+};
