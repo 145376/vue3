@@ -9,6 +9,7 @@ import './assets/css/iconfont.css'
 import {Row, Col, Button, Form, Input, DatePicker, Radio, Checkbox} from 'ant-design-vue'
 
 const app = createApp(App);
+// console.log(window.innerWidth)
 
 app.use(Button);
 app.use(Form);

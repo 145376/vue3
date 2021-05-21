@@ -2,24 +2,25 @@
   <div class="home">
     <header>
       <a-row>
-        <a-col :xs="12" :xl="4">
+        <a-col :xs="20" :lg="4">
             <div class="logo">
               <img src="../assets/images/logo.png" alt="">
             </div>
         </a-col>
-        <a-col :xs="12" :xl="14">
+        <a-col :xs="4" :lg="14">
            <div class="menu">
               <router-link 
-                class="item" 
+                class="item pc" 
                 v-for="( item, index ) in 5" 
                 :key="index"
                 to="/home"
                 exact
               >首页</router-link>
+              <div class="mobile">=</div>
             </div>
         </a-col>
-        <a-col :xs="12" :xl="4">
-          <div class="util">
+        <a-col :xs="0" :lg="4">
+          <div class="util pc">
             <div class="profile">
               <img src="../assets/images/avatar.jpg" alt="">
               <div>
