@@ -11,7 +11,7 @@
         <a-form-item label="密码" name="password">
           <a-input v-model:value="formState.password" type="password"></a-input>
         </a-form-item>
-        <a-form-item :wrapper-col="{ span: 14, offset: 7 }">
+        <a-form-item :wrapper-col="{ span: 16, offset: 2 }">
           <a-button type="primary" size="large" @click="onSubmit">登录</a-button>
           <span class="toRegister">
             还没有账号?<router-link to="/register">去注册</router-link>
@@ -113,7 +113,7 @@ export default defineComponent({
       width: 100%;
       .toRegister{
         font-size: 12px;
-        margin-left: 20px;
+        margin-left: 5%;
       }
       .ant-btn{
         width: 160px;
@@ -122,7 +122,7 @@ export default defineComponent({
     }
   }
   .translate{
-    width: 600px;
+    width: 40%;
   }
 }
 </style>

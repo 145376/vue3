@@ -1,41 +1,24 @@
 <template>
   <div class="home">
     <header>
-      <a-row>
-        <a-col :xs="20" :lg="4">
-            <div class="logo">
-              <img src="../assets/images/logo.png" alt="">
-            </div>
-        </a-col>
-        <a-col :xs="4" :lg="14">
-           <div class="menu">
-              <router-link 
-                class="item pc" 
-                v-for="( item, index ) in 5" 
-                :key="index"
-                to="/home"
-                exact
-              >首页</router-link>
-              <div class="mobile">=</div>
-            </div>
-        </a-col>
-        <a-col :xs="0" :lg="4">
-          <div class="util pc">
-            <div class="profile">
-              <img src="../assets/images/avatar.jpg" alt="">
-              <div>
-                <div>我是你爸爸</div>
-                <div>jsaifvheruig</div>
-              </div>
-            </div>
-            <div class="logout">
-              <div>
-                <span>退出</span>
-              </div>
-            </div>
-          </div>
-        </a-col>
-      </a-row>
+      <div class="logo">
+        <img src="../assets/images/logo.png" alt="">
+      </div>
+      <ul class="head-nav">
+        <li v-for="(item, index) in navList" :key="index">
+          <router-link :to="item.path">{{ item.name }}</router-link>
+        </li>
+      </ul>
+      <div class="user-info">
+        <img src="../assets/images/avatar.jpg" alt="">
+        <div class="info">
+          <div>wasd123456kkk</div>
+          <div>尊贵会员</div>
+        </div>
+      </div>
+      <div class="logout">
+        退出
+      </div>
     </header>
   </div>
 </template>
@@ -45,7 +28,41 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'BaseHeader',
   setup(){
-
+    const navList = [
+      {
+        id: 1,
+        name: '首页',
+        path: ''
+      },
+      {
+        id: 2,
+        name: '我的发帖',
+        path: ''
+      },
+      {
+        id: 3,
+        name: '我的数据',
+        path: ''
+      },
+      {
+        id: 4,
+        name: '我的库存',
+        path: ''
+      },
+      {
+        id: 5,
+        name: '相关资讯',
+        path: ''
+      },
+      {
+        id: 6,
+        name: '关于我们',
+        path: ''
+      }
+    ]
+    return {
+      navList
+    }
   }
 })
 </script>
@@ -53,51 +70,54 @@ export default defineComponent({
 <style lang="less" scoped>
 .home{
   header{
+    display: flex;
+    align-items: center;
     width: 100%;
     padding: 10px 20px;
     background-color: rgba( 0, 0, 0, .5 );
     .logo{
-      width: 40px;
-      height: 40px;
+      width: 80px;
+      height: 80px;
       img{
         width: 100%;
         height: 100%;
       }
     }
-    .menu{
+    .head-nav{
       display: flex;
       align-items: center;
-      margin-top: 10px;
-      font-size: 14px;
+      flex: 5;
+      margin-left: 60px;
+      font-size: 18px;
       color: #fff;
-      .item{
+      li{
         margin-right: 40px;
-        &.router-link-active{
+        .router-link-active{
           color: #fff;
+          &:hover{
+            color: #1890ff;
+          }
         }
       }
     }
-    .util{
+    .user-info{
+      flex: 2;
       display: flex;
       align-items: center;
       color: #fff;
-      .profile{
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-        margin-right: 50px;
-        img{
-          width: 30px;
-          height: 30px;
-          margin-right: 5px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
+      img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
       }
-      .logout{
-        cursor: pointer;
-        font-size: 12px;
-      }
+    }
+    .logout{
+      flex: 1;
+      cursor: pointer;
+      font-size: 16px;
+      color: #fff;
     }
   }
  #barchart{

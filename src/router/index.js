@@ -1,10 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router';
+import Layout from '@/layout/index.vue'
 
 const routes = [
-    {
-        path: '/',
-        redirect: '/login'
-    },
     {
         path: '/login',
         name: 'login',
@@ -16,15 +13,31 @@ const routes = [
         component: () => import('../pages/Register')
     },
     {
-        path: '/about',
-        name: 'about',
-        component: () => import('../pages/About')
+        path: '/',
+        redirect: '/home',
+        component: Layout,
+        children:[
+            {
+                path: 'home',
+                name: 'Home',
+                component: () => import('@/pages/Home'),
+                mate:{title: '首页'}
+            }
+        ]
+
     },
     {
-        path: '/home',
-        name: 'home',
-        component: () => import('../pages/Home')
-    }
+        path: '/about',
+        component: Layout,
+        children:[
+            {
+                path: 'index',
+                name: 'About',
+                component: () => import('@/pages/About'),
+                mate:{title: '关于'}
+            }
+        ]
+    },
 ]
 
 const router = createRouter({

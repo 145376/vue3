@@ -1,22 +1,18 @@
 <template>
-  <div class="about">
-    <div class="box">111111</div>
-  </div>
+  <div class="about">about</div>
 </template>
 
 <script>
-export default {
-
-}
+import { defineComponent } from "vue";
+export default defineComponent({
+  setup() {
+    console.log("about");
+  },
+});
 </script>
 
 <style lang="less" scoped>
-.about{
-  .box{
-    width: 100px;
-    height: 100px;
-    font-size: 24px; /*no*/
-    background-color: pink;
-  }
+.about {
+  background-color: #333;
 }
 </style>

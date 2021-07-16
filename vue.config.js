@@ -3,22 +3,19 @@ module.exports = {
         open: true,
         hot: true,
     },
-    css: {
-        loaderOptions: {
-            less: {
-                javascriptEnabled: true,
-            },
-            css: {},
-            postcss: {
-                plugins: [
-                    require('postcss-px2rem')({
-                        remUnit: 37.5,
-                    }),
-                ],
-            },
-        },
-    },
-    // configureWebpack: config => {
-    //     config.devtool = 'source-map'
-    // }
+    // css: {
+    //     loaderOptions: {
+    //         less: {
+    //             javascriptEnabled: true,
+    //         },
+    //         css: {},
+    //         postcss: {
+    //             plugins: [
+    //                 require('postcss-px2rem')({
+    //                     remUnit: 37.5,
+    //                 }),
+    //             ],
+    //         },
+    //     },
+    // },
 };
