@@ -13,6 +13,6 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .about {
-  background-color: #333;
+  height: 100%;
 }
 </style>

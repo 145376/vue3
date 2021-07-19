@@ -1,49 +1,33 @@
 <template>
-  <div class="layout">
-    <div class="sidebar">
-      <a-menu
-        mode="inline"
-        :theme="theme"
-        v-model:selectedKeys="selectedKeys"
-      >
-        <template v-for="(item) in routes" :key="item.path">
-          <template v-if="item.children">
-            <a-menu-item :key="item.path" @click="navTo(item)">{{item.children[0].mate.title}}</a-menu-item>
-          </template>
-        </template>
-      </a-menu>
-    </div>
+  <div :class="['layout', collapsed ? 'hideSidebar' : '']">
+    <sidebar class="sidebar-container"></sidebar>
     <div class="main-container">
-      <div class="navbar">导航栏</div>
-      <div class="main">
-        <transition name="fade" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </div>
+      <navbar></navbar>
+      <transition name="fade" mode="out-in">
+        <main-view></main-view>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
 import { useRouter } from "vue-router";
-import { reactive, toRefs } from "vue";
-import {Menu} from 'ant-design-vue'
+import {useStore} from 'vuex'
+import sidebar from "./Sidebar/Sidebar.vue";
+import mainView from "./Main.vue";
+import navbar from "./Navbar.vue"
+import { computed } from '@vue/runtime-core';
 export default {
   components: {
-    AMenu: Menu,
-    AMenuItem: Menu.Item,
-    // ASubMenu: Menu.SubMenu
+    sidebar,
+    mainView,
+    navbar,
   },
   setup() {
     const router = useRouter();
-    const routes = router.options.routes;
-    const state = reactive({
-      theme: 'dark',
-      selectedKeys: ['item_0'],
-    });
+    const store = useStore();
 
     const navTo = (item) => {
-      console.log(item);
       let baseUrl = item.path;
       if (item.path === "/") {
         router.push({ path: "/home" });
@@ -55,9 +39,8 @@ export default {
     };
 
     return {
-      routes,
       navTo,
-      ...toRefs(state)
+      collapsed: computed(() => store.getters.sidebar.open)
     };
   },
 };
@@ -65,24 +48,20 @@ export default {
 
 <style lang="less" scoped>
 .layout {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    /deep/ .ant-menu-dark{
-      background-color: #333;
+  &.hideSidebar > .sidebar-container {
+    width: 80px;
+  }
+  &.hideSidebar {
+    .main-container {
+      margin-left: 80px;
     }
   }
   .main-container {
+    height: 100%;
     margin-left: 200px;
-    .navbar {
-      height: 50px;
-      background-color: #fff;
-      box-shadow: 0 0 10px 0 #cccc;
+    transition: margin-left 0.5s linear;
+    .main {
+      height: calc(100% - 80px);
     }
   }
 }
