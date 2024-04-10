@@ -25,6 +25,7 @@ export default {
     provide('echarts', echarts)
     provide('THREE', THREE)
     provide('OrbitControls', OrbitControls)
+    console.log('setup');
   }
 }
 </script>
